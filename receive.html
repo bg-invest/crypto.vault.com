@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">CryptoVault
+        </div>
+        <input type="checkbox" id="sidebar-active">
+      <label id="overlay" for="sidebar-active"></label>
+       <label for="sidebar-active" class="open-side-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+       </label>
+       <div class="links-container">
+        <label for="sidebar-active" class="close-side-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+          </label>
+          
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+         <li><a href="trade.html">Trade</a></li>
+          <li><a href="wallet.html">Wallet</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="withdraw.html">Withdraw</a></li>
+        <li><button onclick="logout()">Logout</button></li>
+    </nav>
+    
+    <!-- CONTENT -->
+    <div class="container">
+        <h2>Receive Funds</h2>
+        <p>To receive funds, please share your wallet address or QR code with the sender.</p>
+        
+        <!-- Wallet Address -->
+        <div class="wallet-info">
+            <h3>Your Wallet Address:</h3>
+            <div class="address-container">
+                <span id="wallet-address">bc1qq33l8p38ch0ppe7y5rc6gl8h0f42v9g3kvjpvw</span>
+                <button class="copy-btn" onclick="copyAddress()">Copy</button>
+            </div>
+        </div>
+        
+        <!-- QR Code -->
+        <div class="qr-code">
+            <h3>QR Code</h3>
+            <div class="qr-placeholder">
+                <p>QR Code Placeholder</p>
+                <!-- You can replace this with an actual QR code image -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('wallet-address').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Address copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+    <script src="chat.js"></script>
+</body>
+</html>

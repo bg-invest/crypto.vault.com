@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">CryptoVault
+    </div>
+    <input type="checkbox" id="sidebar-active">
+  <label id="overlay" for="sidebar-active"></label>
+   <label for="sidebar-active" class="open-side-button">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+   </label>
+   <div class="links-container">
+    <label for="sidebar-active" class="close-side-button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+      </label>
+      
+    <ul>
+      <li class="active">Dashboard</li>
+     <li><a href="trade.html">Trade</a></li>
+      <li><a href="wallet.html">Wallet</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="withdraw.html">Withdraw</a></li>
+    <li><button onclick="logout()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="container">
+
+    <h2>Welcome back,Kevin Lane</h2>
+    <h3 id="portfolio-title">My Portfolio</h3>
+
+    <!-- CARDS -->
+    <div class="cards">
+      <div class="card">
+        <p>Total Balance</p>
+        <h3>$23,000.00</h3>
+      </div>
+
+      <div class="card highlight">
+        <p>Bitcoin Holdings</p>
+        <h3>0.019853 BTC</h3>
+      </div>
+
+      <div class="card">
+        <p>Withdrawal Balance</p>
+        <h3>$5,000.00</h3>
+      </div>
+
+      <div class="card">
+        <p>Withdrawal Fee</p>
+        <h3>$10,000.00</h3>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+     <h3>BTC/USD</h3>
+     <h2 id="btc-price">Loading...</h2>
+     <div class="chart-box">
+      <canvas id="priceChart"></canvas>
+     </div>  
+   </div>
+
+      <div class="side-actions ">
+        <div class="action" onclick="alert('Cannot perform this operation yet.')">Send</div>
+        <div class="action" onclick="window.location.href='receive.html'">Receive</div>
+      </div>
+
+      <div class="trade-box">
+        <h3>Quick Trade</h3>
+        <input type="number" placeholder="Amount ($)">
+        <button class="buy-btn" onclick="alert('Connect to server.')">Buy Bitcoin</button>
+      </div>
+
+      <div class="recent-transactions">
+        <h3>Recent Transactions</h3>
+        <div class="history-list">
+          <div class="transaction-item completed">
+            <div class="transaction-details">
+              <h3>Payment Received</h3>
+              <p>Amount: $23,000.00</p>
+              <p>Date: March 20th, 2026</p>
+           </div>
+            <div class="transaction-status">
+              <span class="status completed">Completed</span>
+            </div>
+          </div>
+        </div>
+        <button class="buy-btn" style="margin-top: 12px;" onclick="window.location.href='history.html'">View Full History</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script src="chat.js"></script>
+  
+</body>
+</html>

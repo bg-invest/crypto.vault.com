@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">CryptoVault
+        </div>
+        <input type="checkbox" id="sidebar-active">
+      <label id="overlay" for="sidebar-active"></label>
+       <label for="sidebar-active" class="open-side-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+       </label>
+       <div class="links-container">
+        <label for="sidebar-active" class="close-side-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+          </label>
+          
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+         <li class="active"><a href="#">Trade</a></li>
+          <li><a href="wallet.html">Wallet</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="withdraw.html">Withdraw</a></li>
+        <li><button onclick="logout()">Logout</button></li>
+    </nav>
+    
+    <!-- CONTENT -->
+    <div class="container">
+        <h2>Trade History</h2>
+        <div class="no-history-card">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#666">
+                    <path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640H200Zm80-80h400v-480H280v480Zm200-240q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm0-120q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-520Zm0-120q17 0 28.5-11.5T520-720q0-17-11.5-28.5T480-760q-17 0-28.5 11.5T440-720q0 17 11.5 28.5T480-640Z"/>
+                </svg>
+            </div>
+            <h3>No Trade History Yet</h3>
+            <p>Start trading to see your activities here.</p>
+            <button class="start-trading" style="background-color: rgb(151, 104, 104);color: aliceblue;padding: 10px 20px;border: none;border-radius: 5px;cursor: pointer;margin-top: 10px;">Start Trading</button>
+        </div>
+    </div>
+    <script src="chat.js"></script>
+    <script>
+        document.querySelector('.start-trading').addEventListener('click', function() {
+            alert('Connect to the sever to start trading');
+        });
+    </script>
+</body>
